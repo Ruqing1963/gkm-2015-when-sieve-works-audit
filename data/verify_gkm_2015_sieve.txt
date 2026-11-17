@@ -1,0 +1,56 @@
+============================================================================
+1. Proposition 2.6 (pp. 10-11): exponents in (2.7) and (2.8)
+============================================================================
+      log x  2nd claim v^-v  (2.7) v^-v/2    (2.8)  (2.7) opt  (2.8) opt
+      1e+02          0.2547        0.1274   0.0542     0.1761     0.0788
+      1e+03          0.3161        0.1581   0.0759     0.2071     0.1003
+      1e+04          0.3421        0.1711   0.0840     0.2204     0.1086
+      1e+06          0.3649        0.1824   0.0907     0.2320     0.1154
+      1e+10          0.3807        0.1904   0.0950     0.2400     0.1198
+      1e+20          0.3911        0.1955   0.0977     0.2452     0.1226
+      1e+40          0.3958        0.1979   0.0989     0.2475     0.1237
+      1e+80          0.3979        0.1990   0.0995     0.2485     0.1243
+   claimed: 1/3 = 0.3333 (2nd claim and (2.7)), 1/6 = 0.1667 ((2.8)); limits: 2/5, 1/5, 1/10, 1/4, 1/8
+[PASS] second claim: exponent -> 2/5 > 1/3 (x^-1/3 is valid there for large x)
+[PASS] (2.7): exponent < 1/5 < 1/3 for all tested log x, and -> 1/5
+[PASS] (2.8): exponent < 1/10 < 1/6 for all tested log x, and -> 1/10
+[PASS] with the largest admissible v = (1/2-eps)log x/loglog x the limits are 1/4 and 1/8 (< 1/3, < 1/6)
+[PASS] (v/2)log(v log v) = (log x/5)(1 - log 2.5/loglog x + o(1/loglog x)) at log x = 1e40
+   hence e^{O(v)}(v log v)^{-v/2} = x^{-1/5 + O(1/loglog x)}: not << x^{-1/3}, and not << (2u)^{-u/2} when u > v (that term is <= (2v)^{-v/2}).
+[PASS] for u = 2v: (2u)^{-u/2} is smaller than (v log v)^{-v/2} by many orders (log scale)
+============================================================================
+2. Lemma 8.5 (p. 25): counterexamples and the corrected statement
+============================================================================
+   (a): u=1, v=4, w=0.5, T=(0.55, 0.9) in (1/(4e),1] = (0.0920,1]: True; ell <= evw = 5.44; ell with ell*T meeting (w-1/v,w]: []
+[PASS] (a): left-hand side of Lemma 8.5 vanishes for every ell <= evw (and every ell >= 1)
+   (b): u=1, v=4, w=1.0, T=(0.6, 0.7) in (1/(4e),1] = (0.0920,1]: True; ell <= evw = 10.87; ell with ell*T meeting (w-1/v,w]: []
+[PASS] (b): left-hand side of Lemma 8.5 vanishes for every ell <= evw (and every ell >= 1)
+[PASS] (b): with the window (w-1/u, w] = (0,1], ell = 1 meets it
+[PASS] corrected Lemma 8.5' (window (w-1/u, w], w >= 1/u): max_l beta_l >= 1/(evw) in 60 random cases
+   smallest ratio max_l beta_l / (1/(evw)) over the trials: 3.509
+============================================================================
+3. Proposition 8.1 (p. 24): w log w versus sigma^{-1} log(1/sigma)
+============================================================================
+   lambda_1 = 1.0: w = (1+lambda_1)/sigma
+      sigma    w log w  s^-1 log(1/s)  s^-1(1+log 1/s)
+       0.01  1059.6635       460.5170         560.5170
+        0.1    59.9146        23.0259          33.0259
+        0.3    12.6475         4.0132           7.3466
+        0.6     4.0132         0.8514           2.5180
+        0.9     1.7745         0.1171           1.2282
+       0.99     1.4206         0.0102           1.0203
+      0.999     1.3897         0.0010           1.0020
+[PASS] w log w / (sigma^-1 log(1/sigma)) is unbounded as sigma -> 1
+[PASS] w log w <= C sigma^-1 (1 + log(1/sigma)) with C = 2(1+lambda_1) on (0, 1]
+   For sigma >= 1/2, w <= 2(1+lambda_1) and w^{O(w)} = O(1); for sigma < 1/2, 1 <= log(1/sigma)/log 2.
+   So w^{O(w)} << sigma^{-O(1/sigma)} up to a constant, and Proposition 8.1 holds as stated.
+============================================================================
+4. Hypothesis P => Hypothesis A (p. 15): endpoints of P
+============================================================================
+   N=1000, u=3.0, v=4.0: a with e^(a+1) > x^(1/u): [333];  a with e^a < x^(1/ev): [92];  sum 1/a removed = 1.39e-02  (<= 2ev/N = 2.17e-02)
+   N=5000, u=1.7, v=3.0: a with e^(a+1) > x^(1/u): [2941];  a with e^a < x^(1/ev): [];  sum 1/a removed = 3.40e-04  (<= 2ev/N = 3.26e-03)
+   N=20000, u=2.5, v=5.0: a with e^(a+1) > x^(1/u): [8000];  a with e^a < x^(1/ev): [];  sum 1/a removed = 1.25e-04  (<= 2ev/N = 1.36e-03)
+[PASS] at most one a at each end violates P in (x^(1/ev), x^(1/u)]; removing them costs <= 2ev/N
+[PASS] at u = 1 the upper endpoint is never violated
+============================================================================
+TOTAL FAILURES: 0
