@@ -10,7 +10,7 @@ Page numbers refer to arXiv:1205.0413v2 (26 pages).
   the proof is `x^{-1/5+o(1)}`, not `<< x^{-1/3}` as in (2.7); the rescaling in (2.8) gives `x^{-1/10+o(1)}`,
   not `x^{-1/6}`. With the largest admissible `v` the method gives `x^{-1/4}` and `x^{-1/8}`; the corrected
   Proposition 2.6 holds with `x^{-1/8+eps}`. Only a power saving is used later.
-* **Lemma 8.5 (p. 25, stated without proof)** is false: for `u = 1, v = 4, w = 1, T = (0.6, 0.7)` the sums
+* **Lemma 8.5 (p. 25, stated without proof)** is false as printed (probably a misprint: `1/v` for `1/u` in the window, or `1/u` for `1/v` in the range of `T`): for `u = 1, v = 4, w = 1, T = (0.6, 0.7)` the sums
   `l*T` skip the window `(0.75, 1]` for every `l`. A corrected lemma (window width = maximal step) is proved;
   its version for `T in (1/ev, 1/v]` is what Proposition 8.4 uses, so Proposition 8.4 is unaffected.
 * **Hypothesis P => Hypothesis A (p. 15).** The set of primes can leave `(x^{1/ev}, x^{1/u}]` at both ends

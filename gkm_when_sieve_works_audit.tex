@@ -29,7 +29,7 @@ the additive windows in \texorpdfstring{\lq\lq When the sieve works\rq\rq}{"When
 \email{ruqing@hotmail.com}
 \date{November 16, 2026}
 \subjclass[2020]{11N25, 11N35, 11B13}
-\keywords{smooth numbers, sieve, Rankin's method, sumsets, Hypothesis P}
+\keywords{smooth numbers, sieve, Rankin's method, sumsets, additive combinatorics}
 
 \begin{document}
 \begin{abstract}
@@ -38,7 +38,7 @@ K.~Matom\"aki (Duke Math.\ J.\ \textbf{164} (2015), 1935--1969). (i) The proof o
 $a\in(\sqrt x,x]$ by $e^{O(v)}(v\log v)^{-v/2}$ where $v=\log x/(2.5\log\log x)$. This is
 $x^{-1/5+o(1)}$, not $\ll x^{-1/3}$ as in (2.7). The rescaling in (2.8) then gives $x^{-1/10+o(1)}$, not
 $x^{-1/6}$. The method yields Proposition~2.6 with $x^{-1/6}$ replaced by $x^{-1/8+\epsilon}$, and its
-qualitative conclusion is unchanged. (ii) Lemma~8.5, stated without proof, is false: for $u=1$, $v=4$,
+qualitative conclusion is unchanged. (ii) Lemma~8.5, stated without proof, is false as printed: for $u=1$, $v=4$,
 $w=1$ and $T=(0.6,0.7)$ its left-hand side vanishes for every $\ell$. The window must have width $1/u$, or
 $T\subset(\frac1{ev},\frac1v]$. We prove both versions; the second is the one needed for
 Proposition~8.4. (iii) The proof of Hypothesis P $\Rightarrow$ Hypothesis A can produce primes outside
@@ -137,7 +137,8 @@ $(\frac1{ev},\frac1u]$. For any $w\ge1/v$ there is a positive integer $\ell\le e
 It is meant to be the continuous analogue of Lemma~7.1 and Corollary~7.2. In those results the steps lie
 in $(y,z]$ and the window $(x-z,x]$ has width $z$, the maximal step. In Corollary~7.2 the steps are
 $\log q\le\frac1u\log x$ and the window has logarithmic width $\frac1u$. In Lemma~8.5 the steps may be as
-large as $\frac1u$, but the window has width only $\frac1v$. When $u<v$ the sums can jump over it.
+large as $\frac1u$, but the window has width only $\frac1v$. When $u<v$ the sums can jump over it. Probably $\frac1v$ in the window is a misprint for $\frac1u$, or
+$\frac1u$ in the range of $T$ for $\frac1v$.
 
 \emph{Counterexamples} ($u=1$, $v=4$, so $T\subset(0.092,1]$).
 \begin{enumerate}
@@ -163,7 +164,7 @@ In particular, the conclusion of Lemma~8.5 holds (A) with the window $(w-\frac1u
 Let $\mu$ be the measure $dt/t$ on $T$, $K=\lfloor w/a\rfloor\ge1$, and $s_k=t_1+\dots+t_k$ for
 $(t_1,\dots,t_K)\in T^K$. Then $s_1\le b\le w$, $s_K>Ka>w-a>w-b$, and $s_k-s_{k-1}\le b$. So the first
 $k$ with $s_k>w-b$ satisfies $s_k\le w$: either $k=1$, or $s_k\le s_{k-1}+b\le w$. Integrating
-$\sum_{k\le K}\mathbf 1[w-b<s_k\le w]\ge1$ against $\mu^K$ gives $\sum_{k\le K}\beta_k\ge1$, where $\beta_k$
+$\sum_{k\le K}\mathbf 1[w-b<s_k\le w]\ge1$ against $\mu^K$ and dividing by $\tau^K$ gives $\sum_{k\le K}\beta_k\ge1$, where $\beta_k$
 is the left-hand side for $\ell=k$ divided by $\tau^k$. Hence $\max_k\beta_k\ge1/K\ge a/w$.
 \end{proof}
 
@@ -206,7 +207,7 @@ Location & Issue & Status after repair\\
 \midrule
 Prop.~2.6, (2.7), p.~11 & $x^{-1/3}$ claimed; proof gives $x^{-1/5+o(1)}$ & Proposition~\ref{prop:26}\\
 Prop.~2.6, (2.8), p.~11 & $x^{-1/6}$ claimed; proof gives $x^{-1/10+o(1)}$ & $x^{-1/8+\epsilon}$ with optimal $v$\\
-Lemma~8.5, p.~25 & window $(w-\frac1v,w]$ too narrow; false & Lemma~\ref{lem:85}; Prop.~8.4 unaffected\\
+Lemma~8.5, p.~25 & window $(w-\frac1v,w]$ too narrow; false as printed & Lemma~\ref{lem:85}; Prop.~8.4 unaffected\\
 P $\Rightarrow$ A, p.~15 & $\cP$ may leave $(x^{1/ev},x^{1/u}]$ & remove $\le2$ elements of $A$\\
 Prop.~8.1, p.~24 & $w\log w\ll\sigma^{-1}\log(1/\sigma)$ false as $\sigma\to1$ & conclusion holds as stated\\
 \bottomrule
